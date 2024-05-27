@@ -4,6 +4,8 @@
   --paragraph-color: #2d334a;
   --main-background-color: #e3f6f5;
   --card-background-color: #fffffe;
+  --read-background-color: #22c55e;
+  --not-read-background-color: #ef4444;
 }
 
 * {
@@ -50,7 +52,6 @@ main {
   font-size: 2rem;
   align-self: center;
   justify-self: center;
-
 }
 
 .card {
@@ -74,4 +75,21 @@ main {
 .card > p {
   font-size: 1.2rem;
   color: var(--paragraph-color);
+}
+
+.read-status {
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 8px;
+  color: var(--card-background-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.read {
+  background-color: var(--read-background-color);
+}
+
+.not-read {
+  background-color: var(--not-read-background-color);
 }
