@@ -31,6 +31,7 @@ function displayBooks() {
     noBooks.textContent = "No Books Added Yet!";
     noBooks.classList.add("no-books");
 
+    main.style.gridTemplateColumns = "1fr";
     main.appendChild(noBooks);
     return;
   }
