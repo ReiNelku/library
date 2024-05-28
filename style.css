@@ -1,6 +1,8 @@
 :root {
   --header-background-color: #fffffe;
   --headline-color: #272343;
+  --new-book-background-color: #ffd803;
+  --new-book-color: #272343;
   --paragraph-color: #2d334a;
   --main-background-color: #e3f6f5;
   --card-background-color: #fffffe;
@@ -28,14 +30,27 @@ body {
 }
 
 header {
+  padding: 2rem 1.5rem;
   background-color: var(--header-background-color);
   box-shadow: 2px 2px 5px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header > h1 {
   font-size: 3rem;
   color: var(--headline-color);
-  padding: 2rem 1.5rem;
+}
+
+header > .new-book {
+  padding: 1.5rem 3rem;
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--new-book-background-color);
+  color: var(--new-book-color);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 main {
