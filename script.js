@@ -74,4 +74,10 @@ newBookBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
+const cancelBtn = document.querySelector("button[value='cancel']");
+
+cancelBtn.addEventListener("click", () => {
+  dialog.close();
+});
+
 displayBooks();
