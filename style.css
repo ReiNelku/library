@@ -29,6 +29,81 @@ body {
   flex-direction: column;
 }
 
+dialog {
+  height: 450px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--card-background-color);
+}
+
+::backdrop {
+  background-color: #000;
+  opacity: 0.6;
+}
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+form > h2 {
+  color: var(--headline-color);
+  font-size: 2rem;
+}
+
+.form-field label {
+  display: block;
+  padding-bottom: 0.2rem;
+  color: var(--paragraph-color);
+  font-size: 1.1rem;
+}
+
+.form-field input {
+  padding: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox label {
+  color: var(--paragraph-color);
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.buttons button {
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--new-book-color);
+}
+
+.buttons button[value="cancel"] {
+  background-color: var(--card-background-color);
+}
+
+.buttons button[value="submit"] {
+  background-color: var(--new-book-background-color);
+}
+
 header {
   padding: 2rem 1.5rem;
   background-color: var(--header-background-color);
