@@ -80,4 +80,30 @@ cancelBtn.addEventListener("click", () => {
   dialog.close();
 });
 
+const submitBtn = document.querySelector("button[value='submit']");
+
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pages");
+  const isRead = document.querySelector("#read");
+
+  if (document.querySelector("form").reportValidity()) {
+    const book = new Book(
+      title.value,
+      author.value,
+      pages.value,
+      isRead.checked
+    );
+
+    addBookToLibrary(book);
+
+    dialog.close();
+
+    displayBooks();
+  }
+});
+
 displayBooks();
