@@ -36,9 +36,14 @@ function displayBooks() {
     return;
   }
 
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index) => {
+    if (document.querySelector(`div[data-index="${index}"`)) {
+      return;
+    }
+
     const card = document.createElement("div");
     card.classList.add("card");
+    card.dataset.index = index;
 
     const title = document.createElement("h2");
     title.textContent = `Title: ${book.title}`;
