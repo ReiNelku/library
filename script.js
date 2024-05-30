@@ -34,6 +34,11 @@ function displayBooks() {
     main.style.gridTemplateColumns = "1fr";
     main.appendChild(noBooks);
     return;
+  } else {
+    main.style.gridTemplateColumns = "";
+    if (document.querySelector(".no-books")) {
+      document.querySelector(".no-books").remove();
+    }
   }
 
   myLibrary.forEach((book, index) => {
