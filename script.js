@@ -67,4 +67,11 @@ function displayBooks() {
   });
 }
 
+const dialog = document.querySelector("dialog");
+const newBookBtn = document.querySelector(".new-book");
+
+newBookBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
 displayBooks();
