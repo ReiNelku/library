@@ -46,6 +46,10 @@ dialog {
   opacity: 0.6;
 }
 
+button {
+  cursor: pointer;
+}
+
 form {
   height: 100%;
   display: flex;
