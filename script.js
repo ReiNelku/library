@@ -20,18 +20,6 @@ function deleteBookFromLibrary(bookIndex) {
   displayBooks();
 }
 
-const book1 = new Book("Author 1", "The Title 1", "69", true);
-
-addBookToLibrary(book1);
-
-const book2 = new Book("Author 2", "The Title 2", "420", false);
-
-addBookToLibrary(book2);
-
-const book3 = new Book("Author 3", "The Title 3", "69420", true);
-
-addBookToLibrary(book3);
-
 const main = document.querySelector("main");
 
 function displayBooks() {
