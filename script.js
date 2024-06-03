@@ -99,6 +99,7 @@ function displayBooks() {
 }
 
 const dialog = document.querySelector("dialog");
+const form = document.querySelector("form");
 const newBookBtn = document.querySelector(".new-book");
 
 newBookBtn.addEventListener("click", () => {
@@ -121,7 +122,7 @@ submitBtn.addEventListener("click", (e) => {
   const pages = document.querySelector("#pages");
   const isRead = document.querySelector("#read");
 
-  if (document.querySelector("form").reportValidity()) {
+  if (form.reportValidity()) {
     const book = new Book(
       title.value,
       author.value,
@@ -131,6 +132,7 @@ submitBtn.addEventListener("click", (e) => {
 
     addBookToLibrary(book);
 
+    form.reset();
     dialog.close();
 
     displayBooks();
