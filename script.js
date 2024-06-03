@@ -11,6 +11,15 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+function deleteBookFromLibrary(bookIndex) {
+  delete myLibrary[bookIndex];
+
+  const bookCard = document.querySelector(`div[data-index="${bookIndex}"`);
+  main.removeChild(bookCard);
+
+  displayBooks();
+}
+
 const book1 = new Book("Author 1", "The Title 1", "69", true);
 
 addBookToLibrary(book1);
@@ -26,7 +35,7 @@ addBookToLibrary(book3);
 const main = document.querySelector("main");
 
 function displayBooks() {
-  if (myLibrary.length === 0) {
+  if (myLibrary.length === 0 || myLibrary.every((book) => book === undefined)) {
     const noBooks = document.createElement("h3");
     noBooks.textContent = "No Books Added Yet!";
     noBooks.classList.add("no-books");
@@ -62,6 +71,9 @@ function displayBooks() {
     pages.textContent = `Pages: ${book.pages}`;
     card.appendChild(pages);
 
+    const buttons = document.createElement("div");
+    buttons.classList.add("buttons");
+
     const read = document.createElement("button");
     read.classList.add("read-status");
     if (book.isRead) {
@@ -71,7 +83,19 @@ function displayBooks() {
       read.textContent = "Not Read";
       read.classList.add("not-read");
     }
-    card.appendChild(read);
+    buttons.appendChild(read);
+
+    const deleteBookBtn = document.createElement("button");
+    deleteBookBtn.textContent = "Delete!";
+    deleteBookBtn.classList.add("delete-book");
+    deleteBookBtn.addEventListener("click", () => {
+      if (confirm("Are you sure? This action cannot be undone!")) {
+        deleteBookFromLibrary(index);
+      }
+    });
+    buttons.appendChild(deleteBookBtn);
+
+    card.appendChild(buttons);
 
     main.appendChild(card);
   });
