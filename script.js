@@ -76,13 +76,22 @@ function displayBooks() {
 
     const read = document.createElement("button");
     read.classList.add("read-status");
-    if (book.isRead) {
-      read.textContent = "Read";
-      read.classList.add("read");
-    } else {
-      read.textContent = "Not Read";
-      read.classList.add("not-read");
+    function setReadStatus() {
+      if (book.isRead) {
+        read.textContent = "Read";
+        read.classList.add("read");
+        read.classList.remove("not-read");
+      } else {
+        read.textContent = "Not Read";
+        read.classList.add("not-read");
+        read.classList.remove("read");
+      }
     }
+    setReadStatus();
+    read.addEventListener("click", () => {
+      myLibrary[index].isRead = !myLibrary[index].isRead;
+      setReadStatus();
+    });
     buttons.appendChild(read);
 
     const deleteBookBtn = document.createElement("button");
